@@ -1,0 +1,11 @@
+.Header {
+    margin: auto;
+}
+h2 {
+    text-align: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
