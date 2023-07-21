@@ -1,8 +1,46 @@
+// import React from 'react';
+// import './Card.css';
+
+// export default function Card({ word, setShowTranslation, showTranslation}) {
+
+//   const handleTranslationClick = () => {
+//     setShowTranslation(true);
+//   };
+
+//   return (
+//     <div className="card">
+//       <div className="card_item">
+//         <p className="text">{word.english}</p>
+//         {showTranslation ? (
+//           <p className="text">{word.russian}</p>
+//         ) : (
+//           <button className="button_translation" onClick={handleTranslationClick}>
+//             Показать перевод
+//           </button>
+//         )}
+//       </div>
+//       <div className="button">
+//         <button id="button">Знаю</button>
+//         <button id="button">Не знаю</button>
+//       </div>
+//     </div>
+//   );
+
+// }
+
+// Card.defaultProps = {
+//   english: 'default word',
+//   russian: 'default translate',
+//   setShowTranslation: () => {},
+//   showTranslation: false,
+// };
+
 import './Card.css'; 
 import React from 'react'; 
 
 export default function Card() {
   const addedWords = JSON.parse(localStorage.getItem('addedWords'));
+  
   
   function handleTranslationClick () { 
     document.getElementById("text_translation").style.display = "block";
@@ -39,5 +77,4 @@ export default function Card() {
       </div> 
     );
   }
-
 

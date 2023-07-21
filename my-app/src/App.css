@@ -1,8 +1,10 @@
-/* .App {
+.App {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 60%;
-} */
+}
+
+
 
 
 

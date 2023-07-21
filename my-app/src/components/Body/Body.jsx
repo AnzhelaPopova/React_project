@@ -9,9 +9,10 @@ function Body(props) {
   const [translation, setTranslation] = useState('');
   const [inputs] = useState([]); 
   const [addedWords, setAddedWords] = useState(new Set()); // Set для хранения добавленных слов
+  
   console.log (addedWords)
   console.log(addedWords.values().next().value);
-  
+
   const wordChange = event => {
     setWord(event.target.value);
   };
@@ -24,7 +25,7 @@ function Body(props) {
     let translation = document.getElementById('translation').value; // Получаем значение поля transcription
     let transcriptionValue = transcription;
     let translationValue = translation;
-    
+
     if (transcriptionValue === '' && translationValue === '') { 
       alert ('Ошибка: слово не найдено'); 
       return; // Останавливаем выполнение функции 
@@ -39,7 +40,7 @@ function Body(props) {
     alert('Ошибка: слово уже добавлено');  
     return; // Останавливаем выполнение функции  
   }
-    
+
     let newInput1 = document.createElement("input"); // Создаем новый инпут для слова
     let newInput2 = document.createElement("input"); // Создаем новый инпут для транскрипции
     let newInput3 = document.createElement("input"); // Создаем новый инпут для перевода
@@ -56,7 +57,7 @@ function Body(props) {
     div.appendChild(newInput4);
 
     setAddedWords(new Set(addedWords.add({ word, transcription: transcriptionValue, translation: translationValue }))); // Добавляем новое слово в Set добавленных слов
-    
+
 
     setWord(''); 
     setTranscription(''); 
@@ -65,15 +66,14 @@ function Body(props) {
 
   useEffect(() => {
 
-    
-    localStorage.setItem('addedWords', JSON.stringify(Array.from(addedWords)));
+      localStorage.setItem('addedWords', JSON.stringify(Array.from(addedWords)));
   }, [addedWords]);
   console.log (localStorage)
   console.log (addedWords)
 
-  
+
   const removeInput = (index) => {
-    
+
     let div = document.getElementById("input");
     let inputs = div.getElementsByTagName("input");
     let img = div.getElementsByTagName("img")[index];
@@ -95,7 +95,7 @@ function Body(props) {
       let valueWord = InputWord.value
 
       let wordFound = false;
-      
+
       for (let i = 0; i < data.length; i++) {
         if (valueWord === data[i].english) {
           document.getElementById('transcription').value = data[i].transcription
@@ -118,6 +118,7 @@ function Body(props) {
   }, []);
 
   return (
+   
     <div id='input'>
       <input
         id='word'
@@ -152,7 +153,7 @@ function Body(props) {
    {inputs.map((el, index) => (
         <div key={index}>{el}</div>
       ))}
-   
+
     </div>
   );
 }
