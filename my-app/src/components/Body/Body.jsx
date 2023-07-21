@@ -75,6 +75,16 @@ function Body(props) {
         placeholder="Введите слово">
         <option value="">Выберите вариант</option>
     </select>
+<div>
+
+      <input
+        id="dropdown"
+        type="text"
+        value={dropdown}
+        onChange={wordChange}
+        placeholder="Введённое слово"
+        readOnly 
+      />
       <input
         id='transcription'
         type="text"
@@ -92,6 +102,9 @@ function Body(props) {
         readOnly 
       />
       <button id="button" onClick={save}>Сохранить</button>
+</div>
+
+      
    {inputs.map((el, index) => (
         <div key={index}>{el}</div>
       ))}
