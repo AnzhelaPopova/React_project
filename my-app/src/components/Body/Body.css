@@ -10,6 +10,13 @@ body {
     width: 200px;
 }
 
+select {
+    height: 30px;
+    justify-content: center;
+    margin: 10px;
+    width: 200px;
+}
+
 .btn_img {
         background-color: #fff;
     border: none;
