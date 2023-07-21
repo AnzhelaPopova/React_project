@@ -8,7 +8,6 @@ function Body(props) {
   const [inputs] = useState([]); 
   const [addedWords, setAddedWords] = useState(new Set()); 
   console.log (addedWords)
-  console.log(addedWords.values().next().value);
   const wordChange = event => {
     setDropdown(event.target.selectedOptions[0].text);
   };
@@ -18,6 +17,12 @@ function Body(props) {
     let translation = document.getElementById('translation').value; 
     let transcriptionValue = transcription;
     let translationValue = translation;
+
+    if (transcriptionValue === '' && translationValue === '') { 
+      alert ('Ошибка: выберете слово'); 
+      return; // Останавливаем выполнение функции 
+  } 
+
     let newInput1 = document.createElement("input"); 
     let newInput2 = document.createElement("input"); 
     let newInput3 = document.createElement("input"); 

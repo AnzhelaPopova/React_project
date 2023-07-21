@@ -52,13 +52,13 @@ export default function Card() {
 
          
     {addedWords.map((item, index) => { 
-        const { word, transcription, translation } = item;
+        const { dropdown, transcription, translation } = item;
 
    
         return (
           <div key={index} className='card' id='card'>
             <div className='card_item'>
-              <p className='text'>{word}</p>
+              <p className='text'>{dropdown}</p>
               <p className='text'>{transcription}</p>
               <p className='text_translation' id = "text_translation">{translation}</p>
                   <button id='button ' className='button_translation' onClick={handleTranslationClick}>  
