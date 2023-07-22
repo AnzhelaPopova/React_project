@@ -1,7 +1,12 @@
 .App {
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 100%;
+}
+
+.Body {
+  display: flex;
+  justify-content: center;
 }
 
 

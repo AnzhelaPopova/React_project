@@ -1,28 +1,37 @@
 import React, { useState, useEffect } from 'react';
+
 import bin from '../../assets/images/bin.png';
 import './Body.css';
 function Body(props) {
   const [dropdown, setDropdown] = useState('');
   const [transcription, setTranscription] = useState('');
   const [translation, setTranslation] = useState('');
-  const [inputs] = useState([]); 
   const [addedWords, setAddedWords] = useState(new Set()); 
   console.log (addedWords)
   const wordChange = event => {
     setDropdown(event.target.selectedOptions[0].text);
   };
+
   const save = () => {
+   
     let div = document.getElementById("input");
     let transcription= document.getElementById('transcription').value;
     let translation = document.getElementById('translation').value; 
     let transcriptionValue = transcription;
     let translationValue = translation;
 
+    if (addedWords.has({ dropdown, transcription: transcriptionValue, translation: translationValue })) {
+      alert('Ошибка: слово уже было добавлено');
+      return;
+    }
+
     if (transcriptionValue === '' && translationValue === '') { 
       alert ('Ошибка: выберете слово'); 
       return; // Останавливаем выполнение функции 
   } 
 
+  let createDiv = document.createElement("div");
+  createDiv.className = "createDiv";
     let newInput1 = document.createElement("input"); 
     let newInput2 = document.createElement("input"); 
     let newInput3 = document.createElement("input"); 
@@ -31,15 +40,23 @@ function Body(props) {
     newInput2.value = transcriptionValue; 
     newInput3.value = translationValue; 
     newInput4.src = bin
-    div.appendChild(newInput1);
-    div.appendChild(newInput2); 
-    div.appendChild(newInput3); 
-    div.appendChild(newInput4);
+    newInput4.className = "img_bin";
+    createDiv.appendChild(newInput1);
+    createDiv.appendChild(newInput2); 
+    createDiv.appendChild(newInput3); 
+    createDiv.appendChild(newInput4);
+
+    newInput4.addEventListener("click", () => {
+      div.removeChild(createDiv);
+    });
+
+    div.appendChild(createDiv);
     setAddedWords(new Set(addedWords.add({ dropdown, transcription: transcriptionValue, translation: translationValue }))); 
     setDropdown('');
     setTranscription(''); 
     setTranslation(''); 
-  };
+}
+
   useEffect(() => {
       localStorage.setItem('addedWords', JSON.stringify(Array.from(addedWords)));
   }, [addedWords]);
@@ -106,14 +123,10 @@ function Body(props) {
         placeholder="Перевод"
         readOnly 
       />
-      <button id="button" onClick={save}>Сохранить</button>
+      <button id ="button" onClick={save}>Сохранить</button>
 </div>
-
-      
-   {inputs.map((el, index) => (
-        <div key={index}>{el}</div>
-      ))}
     </div>
+ 
   );
-}
+    }
 export default Body;

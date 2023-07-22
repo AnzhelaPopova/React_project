@@ -10,6 +10,11 @@ body {
     width: 200px;
 }
 
+#input {
+    margin: auto;
+}
+
+
 select {
     height: 30px;
     justify-content: center;
@@ -27,6 +32,7 @@ select {
 
 button {
     margin: 10px;
+    cursor: pointer;
 }
 
 .saveString {
@@ -40,3 +46,15 @@ img {
 margin-top: 5px;
 }
 
+.newdiv {
+    margin: auto;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+}
+
+.img_bin {
+    cursor: pointer;
+}

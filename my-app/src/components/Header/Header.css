@@ -1,11 +1,22 @@
 .Header {
     margin: auto;
+    margin: auto;
+  
 }
+
+
+
 h2 {
     text-align: center;
+    margin: auto;
 }
 
 .button {
     display: flex;
     justify-content: center;
+}
+
+.img_logo {
+    margin: auto;
+    width: 100%;
 }

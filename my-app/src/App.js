@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Header from './components/Header/Header.jsx';
 import Body from './components/Body/Body';
 import Slider from './components/Slider/Slider';
+// import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
 	return (
 		<div className='App'>
 			<Header />
-			<Body />
+			<Body className = "Body" />
 			<Slider 
 				word={words[currentWordIndex]}
 				onNextWord={handleNextWord}
@@ -43,6 +44,7 @@ function App() {
 				setShowTranslation={setShowTranslation}
 				showTranslation={showTranslation}
 			/>
+			{/* <Footer /> */}
 		</div>
 	);
 }

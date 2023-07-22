@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css'; 
+import logo from '../../assets/images/9.jpg';
 
 export default function Header(){
 
@@ -18,7 +19,10 @@ export default function Header(){
 
     return(
       <nav className = "Header">
-        <h2>Приложение для изучения английского</h2>
+        <div className='Header_title'>
+        <a href="/"><img src={logo}  alt="logo" className='img_logo' /></a>
+        {/* <h2>Приложение для изучения английского</h2> */}
+        </div>
         <div className='button'>
         <button id="button" >Все слова</button>
         <button id="button"  >Карточки</button>
