@@ -1,13 +1,13 @@
 .card_item {
-    width: 30%;
-    height: 40%;
     background-color: aquamarine;
     border-radius: 10px;
     margin: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    width: 200px;
+    height: 300px;
 }
 .card {
     margin: auto;
@@ -17,13 +17,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    margin: 10px;
-    
-    
 }
 .button_translation {
     margin: auto;
     display: block;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .text {
@@ -32,12 +31,28 @@
 
   button {
     cursor: pointer;
-    
+    margin: 10px;
   }
 
   .text_translation {
     display: none;
-    
   }
 
+  .button_Know {
+    background-color:green;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
 
+  .button_NotKnow {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+.string {
+  display: flex;
+  justify-content: center;
+}

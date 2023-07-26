@@ -1,6 +1,6 @@
 body {
-    width: 900px;
     margin: auto;
+    margin-top: 100px;
 }
 
   input  {
@@ -14,7 +14,6 @@ body {
     margin: auto;
 }
 
-
 select {
     height: 30px;
     justify-content: center;
@@ -22,24 +21,18 @@ select {
     width: 200px;
 }
 
-.btn_img {
-        background-color: #fff;
-    border: none;
-    cursor: pointer;
-    height: 80%;
-    margin: auto 10px;
-}
-
-button {
+.button_save {
     margin: 10px;
     cursor: pointer;
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .saveString {
     display: flex;
     flex-direction: row;
 }
-
 
 img {
     margin: auto;

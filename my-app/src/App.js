@@ -1,12 +1,17 @@
 import React, {useState} from 'react';
-import Header from './components/Header/Header.jsx';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header/Header';
 import Body from './components/Body/Body';
-import Slider from './components/Slider/Slider';
-// import Footer from './components/Footer/Footer';
+import Table from './components/Table/Table';
+import styles from './components/Slider/Slider.css';
 
+
+// import Card from './components/Card/Card';
+import Slider from './components/Slider/Slider';
+import Footer from './components/Footer/Footer';
 
 function App() {
-	const words = [
+  const words = [
 		{english: 'word1', russian: 'слово1'},
 		{english: 'word2', russian: 'слово2'},
 		{english: 'word3', russian: 'слово3'},
@@ -28,25 +33,29 @@ function App() {
 		});
 		setShowTranslation(false);
 	};
-
-	if (words.length === 0 || currentWordIndex >= words.length) {
-		return <div>Слова не найдены</div>;
-	}
-
-	return (
-		<div className='App'>
-			<Header />
-			<Body className = "Body" />
-			<Slider 
+	
+  return (
+    <BrowserRouter>
+      <div className='App'>
+	  <Header />
+		<div>
+			<Routes>
+				<Route path="/React-project" element={<Table />} />
+				<Route path="/" element={<Table />} />
+				<Route path="/card" element={   <Slider className={styles.card_container}
 				word={words[currentWordIndex]}
 				onNextWord={handleNextWord}
 				onPreviousWord={handlePreviousWord}
 				setShowTranslation={setShowTranslation}
 				showTranslation={showTranslation}
-			/>
-			{/* <Footer /> */}
+			/>} />
+				<Route path="/words" element={<Body />} />
+			</Routes>	
 		</div>
-	);
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;

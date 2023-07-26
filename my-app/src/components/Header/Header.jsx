@@ -1,33 +1,30 @@
 import React from 'react';
 import './Header.css'; 
-import logo from '../../assets/images/9.jpg';
+import { Link } from "react-router-dom";
+import logo from '../../assets/images/13.png';
+
 
 export default function Header(){
 
-  // function showCard() {
-  //   // Проверяем наличие данных в LocalStorage
-  //   if (localStorage.getItem('myData')) {
-  //     // Если данные есть, перенаправляем на другую страницу
-  //     console.log (localStorage)
-  //     document.getElementById("card").style.display = "flex";
-  //   // } else {
-  //   //   // Если данных нет, выводим ошибку
-  //   //   alert('Слова для изучения не добавлены');
-  //   //   return
-  //   // }
-  // }}
-
-    return(
-      <nav className = "Header">
-        <div className='Header_title'>
-        <a href="/"><img src={logo}  alt="logo" className='img_logo' /></a>
-        {/* <h2>Приложение для изучения английского</h2> */}
-        </div>
-        <div className='button'>
-        <button id="button" >Все слова</button>
-        <button id="button"  >Карточки</button>
-        </div>
-       
+  return (
+    <header className = "cardHeader">
+      <div>
+      <nav>
+        <ul>
+        <Link to="/"><img src={logo} className= "logo" alt="logo" /></Link>
+        <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/card">Cards</Link>
+            </li>
+            <li>
+              <Link to="/words">Words</Link>
+            </li>
+        </ul>
       </nav>
-    );
-  }
+      </div>
+    
+    </header>
+  );
+}

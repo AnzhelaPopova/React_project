@@ -1,0 +1,18 @@
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: rgb(211, 250, 237);
+    z-index: 100;
+    font-size: 16px;
+    color: rgb(91, 89, 89);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .logo {
+    height: 50px;
+    cursor: pointer;
+    background-color: rgb(211, 250, 237);;
+  }
