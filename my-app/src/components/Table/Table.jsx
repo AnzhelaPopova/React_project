@@ -6,7 +6,7 @@ const APIExample = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://itgirlschool.justmakeit.ru/api/words')
+    fetch('https://itgirlschool.justmakeit.ru/api/words')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error(error));

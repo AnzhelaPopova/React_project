@@ -1,28 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Card.css';
 
-export default function Card({ word, setShowTranslation, showTranslation}) {
+export default function Card({ word, setShowTranslation, showTranslation }) {
+  const [wordCount, setWordCount] = useState(0);
+  const translationButtonRef = useRef(null);
+
+  useEffect(() => {
+    if (showTranslation) {
+      setWordCount(prevCount => prevCount + 1);
+    }
+  }, [showTranslation]);
+
+  useEffect(() => {
+    if (!showTranslation) {
+      translationButtonRef.current.focus();
+    }
+  }, [showTranslation]);
 
   const handleTranslationClick = () => {
     setShowTranslation(true);
   };
 
+  const handleButtonBlur = () => {
+    if (!showTranslation) {
+      translationButtonRef.current.focus();
+    }
+  };
+
   return (
     <div className="card">
       <div className="card_item">
-        <p className="text">{word.english}</p>
+        <p className="text text_english">
+          {word.english}
+        </p>
+        <p className="text">
+          {word.transcription}
+        </p>
         {showTranslation ? (
-          <p className="text">{word.russian}</p>
+          <p className="text">
+            {word.russian}
+          </p>
         ) : (
-          <button className="button_translation" onClick={handleTranslationClick}>
+          <button className="button_translation" ref={translationButtonRef} onClick={handleTranslationClick} onBlur={handleButtonBlur}>
             Показать перевод
           </button>
         )}
       </div>
-      <div >
-        <button className="button_Know" id="button">Знаю</button>
-        <button className="button_NotKnow" id="button">Не знаю</button>
-      </div>
+      <p>Счетчик слов: {wordCount}</p>
     </div>
   );
 }
@@ -33,42 +57,3 @@ Card.defaultProps = {
   setShowTranslation: () => {},
   showTranslation: false,
 };
-
-// import React from 'react';
-// import './Card.css';
-
-// export default function Card() {
-//     const addedWords = JSON.parse(localStorage.getItem('addedWords'));
-
-//     function handleTranslationClick() {
-//         document.getElementById("text_translation").style.display = "block";
-//         document.querySelector(".button_translation").style.display = "none";
-//     }
-
-//     return (
-//         <div>
-//             {addedWords && addedWords.length > 0 && addedWords.map((item, index) => { // Проверяем наличие данных в массиве
-//                 const { dropdown, transcription, translation } = item;
-
-//                 return (
-//                     <div key={index} className='card' id='card'>
-//                         <div className='card_item'>
-//                             <p className='text'>{dropdown}</p>
-//                             <p className='text'>{transcription}</p>
-//                             <p className='text_translation' id="text_translation">{translation}</p>
-//                             <button id='button ' className='button_translation' onClick={handleTranslationClick}>
-//                                 Показать перевод
-//                             </button>
-//                         </div>
-                
-//                         <div className='button'>
-//                             <button id='button'>Знаю</button>
-//                             <button id='button'>Незнаю</button>
-//                         </div>
-//                     </div>
-//                 );
-//             })}
-//         </div>
-//     );
-// }
-

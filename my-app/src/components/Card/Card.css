@@ -25,6 +25,10 @@
     padding: 10px;
 }
 
+.button_translation:focus  {
+  border: 2px solid black;
+}
+
 .text {
     text-justify: auto;
 }
@@ -55,4 +59,10 @@
 .string {
   display: flex;
   justify-content: center;
+}
+
+.text_english {
+  font-size: 25px;
+  font-weight: bold;
+
 }

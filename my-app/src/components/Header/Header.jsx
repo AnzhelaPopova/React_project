@@ -13,13 +13,13 @@ export default function Header(){
         <ul>
         <Link to="/"><img src={logo} className= "logo" alt="logo" /></Link>
         <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Главная</Link>
             </li>
             <li>
-              <Link to="/card">Cards</Link>
+              <Link to="/card">Карточки</Link>
             </li>
             <li>
-              <Link to="/words">Words</Link>
+              <Link to="/words">Слова</Link>
             </li>
         </ul>
       </nav>

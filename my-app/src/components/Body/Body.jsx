@@ -95,7 +95,7 @@ function Body(props) {
     
   const fetchData = async () => {  
     try {  
-      const response = await fetch('http://itgirlschool.justmakeit.ru/api/words');  
+      const response = await fetch('https://itgirlschool.justmakeit.ru/api/words');  
       const data = await response.json();  
     
       let selectedWord = data.find(option => option.english === dropdown);  
