@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';  
-  
 import bin from '../../assets/images/bin.png';  
+import pencil from '../../assets/images/pencil.png';
+import check from '../../assets/images/check-mark.png';
+
 import './Body.css';  
 function Body(props) {  
   const [dropdown, setDropdown] = useState('');  
   const [transcription, setTranscription] = useState('');  
   const [translation, setTranslation] = useState('');  
   const [addedWords, setAddedWords] = useState([]);   
-  // const [addedDivs, setAddedDivs] = useState([]);   
-  console.log (addedWords)  
+
   const wordChange = event => {  
     setDropdown(event.target.selectedOptions[0].text);  
   };  
@@ -44,15 +45,46 @@ function Body(props) {
     let newInput2 = document.createElement("input");   
     let newInput3 = document.createElement("input");   
     let newInput4 = document.createElement("img");   
+     let newInput5 = document.createElement("img");  
+    let newInput6 = document.createElement("img");  
     newInput1.value = dropdown;   
     newInput2.value = transcriptionValue;   
     newInput3.value = translationValue;   
-    newInput4.src = bin  
-    newInput4.className = "img_bin";  
+    newInput4.src = pencil;
+    newInput5.src = check;
+    newInput6.src = bin  
+    
     createDiv.appendChild(newInput1);  
     createDiv.appendChild(newInput2);   
     createDiv.appendChild(newInput3);   
-    createDiv.appendChild(newInput4);  
+    createDiv.appendChild(newInput4); 
+    createDiv.appendChild(newInput5); 
+    createDiv.appendChild(newInput6);
+
+    newInput1.addEventListener("change", (event) => {
+      if (event.target.value === "") {
+        event.target.classList.add("error");
+      } else {
+        event.target.classList.remove("error");
+      }
+    });
+        // Добавляем обработчик события на изменение поля transcription
+    newInput2.addEventListener("change", (event) => {
+      if (event.target.value === "") {
+        event.target.classList.add("error");
+      } else {
+        event.target.classList.remove("error");
+      }
+    });
+    
+    // Добавляем обработчик события на изменение поля translation
+    newInput3.addEventListener("change", (event) => {
+      if (event.target.value === "") {
+        event.target.classList.add("error");
+      } else {
+        event.target.classList.remove("error");
+      }
+    });
   
     div.appendChild(createDiv);  
     setAddedWords([  
@@ -69,7 +101,7 @@ function Body(props) {
     setTranscription('');   
     setTranslation('');   
   
-    newInput4.addEventListener("click", () => {  
+    newInput6.addEventListener("click", () => {  
       div.removeChild(createDiv);  
       removeWord(index); // вызываем функцию удаления слова из массива   
 })  

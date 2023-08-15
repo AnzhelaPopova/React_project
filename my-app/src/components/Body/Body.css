@@ -37,6 +37,8 @@ select {
 img {
     margin: auto;
 margin-top: 5px;
+cursor: pointer;
+padding: 0 5px;
 }
 
 .newdiv {
@@ -48,6 +50,6 @@ margin-top: 5px;
     justify-content: center;
 }
 
-.img_bin {
-    cursor: pointer;
-}
+.error {
+    border: 2px solid red;
+  }
