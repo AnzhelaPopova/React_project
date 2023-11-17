@@ -1,55 +1,89 @@
-body {
-    margin: auto;
-    margin-top: 100px;
+@font-face {
+  font-family: "Annabelle";
+  src: url(../../assets/fonts/Annabelle.ttf);
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../../assets/fonts/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../../assets/fonts/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../../assets/fonts/Inter-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Calibri";
+  src: url(../../assets/fonts/Calibri_bold.ttf);
+}
+@font-face {
+  font-family: "Nunito";
+  src: url(../../assets/fonts/Nunito-Regular.ttf);
+}
+.foto {
+  width: calc((100vw + 654px) / 5);
+  height: calc((100vw + 654px) / 5);
+  border-radius: 50%;
 }
 
-  input  {
-    height: 30px;
-    justify-content: center;
-    margin: 10px;
-    width: 200px;
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.body__item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5em;
+  margin: 5em 1em 1em 1em;
+}
+.body__item_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.body__item_title h2 {
+  margin: 10px;
+}
+.body__item_title-text {
+  font-size: calc((100vw + 1700px) / 104);
+  font-family: "Annabelle", sans-serif;
+  margin: 0;
+}
+.body__button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.body__button button {
+  margin: 10px 10px 20px 10px;
+  height: 100px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: rgb(253, 217, 208);
+  cursor: pointer;
+  font-family: "Annabelle", sans-serif;
+  font-size: calc((100vw + 1700px) / 104);
+  font-weight: 500;
+}
+.body__button button:hover {
+  height: 105px;
+  width: 205px;
+  background-color: rgb(233, 193, 184);
+  font-size: calc((100vw + 1700px) / 90);
 }
 
-#input {
-    margin: auto;
+p {
+  font-family: "Inter";
 }
 
-select {
-    height: 30px;
-    justify-content: center;
-    margin: 10px;
-    width: 200px;
-}
-
-.button_save {
-    margin: 10px;
-    cursor: pointer;
-    background-color: aquamarine;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.saveString {
-    display: flex;
-    flex-direction: row;
-}
-
-img {
-    margin: auto;
-margin-top: 5px;
-cursor: pointer;
-padding: 0 5px;
-}
-
-.newdiv {
-    margin: auto;
-}
-
-.input {
-    display: flex;
-    justify-content: center;
-}
-
-.error {
-    border: 2px solid red;
-  }
+span {
+  font-size: calc((100vw + 200px) / 30);
+  font-family: "Annabelle", sans-serif;
+}/*# sourceMappingURL=Body.css.map */

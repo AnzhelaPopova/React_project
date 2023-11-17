@@ -1,64 +1,67 @@
-.Header {
-    margin: auto;
-}
+/* .Header {
+  margin: auto;
+} */
 
 h2 {
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
 }
 
 .button {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .img_logo {
-    margin: auto;
+  margin: auto;
 }
-  .cardHeader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin: auto;
-    background-color: rgb(211, 250, 237);
-    box-shadow: 0px 0px 1px 0px rgb(122, 118, 122);
-    z-index: 100;
-    font-size: 16px;
-    color: rgb(91, 89, 89);
-  }
-  .cardHeader .logo {
-    height: 50px;
-    cursor: pointer;
-    background-color: rgb(211, 250, 237);;
-  }
-  
-  .cardHeader nav ul {
-    width: 60%;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    margin: auto;
-  }
-  
-  .cardHeader nav ul li a {
-    text-decoration: none;
-    color: rgb(91, 89, 89);
-  }
-  
-  .cardHeader nav ul li a:hover {
-    color: rgb(236, 59, 59);
-  }
-  
-  .languagesSelect {
-    border: none;
-    background-color: rgb(246, 247, 251);
-    color: rgb(91, 89, 89);
-    font-size: 16px;
-  }
-  
-  .languagesSelect:hover {
-    color: rgb(236, 59, 59);
-  }
+
+.cardHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* margin: auto; */
+  background: linear-gradient(60deg, rgb(180, 131, 120), rgb(253, 217, 208));
+  /* box-shadow: 0px 0px 1px 0px rgb(122, 118, 122); */
+  z-index: 100;
+  font-size: 16px;
+  color: rgb(91, 89, 89);
+}
+
+.cardHeader .logo {
+  height: 50px;
+  cursor: pointer;
+  background-color: rgb(253, 217, 208);
+  /* margin: 0.5em; */
+}
+
+.cardHeader nav ul {
+  width: 60%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin: 0.1em;
+}
+
+.cardHeader nav ul li a {
+  text-decoration: none;
+  color: rgb(91, 89, 89);
+}
+
+.cardHeader nav ul li a:hover {
+  color: rgb(236, 59, 59);
+}
+
+.languagesSelect {
+  border: none;
+  background-color: rgb(246, 247, 251);
+  color: rgb(91, 89, 89);
+  font-size: 16px;
+}
+
+.languagesSelect:hover {
+  color: rgb(236, 59, 59);
+}
